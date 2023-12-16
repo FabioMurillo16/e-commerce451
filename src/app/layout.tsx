@@ -1,6 +1,11 @@
 import React from 'react'
 import { Metadata } from 'next'
 
+
+/*Im importing the font from next/font/google */
+import {Jost} from 'next/font/google'
+import { Abel } from 'next/font/google'
+
 import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
@@ -10,6 +15,20 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
 
+/*In this part im adding the objets to create the fonts*/
+
+const jost = Jost({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-jost',
+})
+
+const abel = Abel({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-abel'
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -18,12 +37,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body>
+      <body className={abel.variable}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error */}
           <Header />
-          {children}
+          <main className='main'>{children}</main>
           {/* @ts-expect-error */}
           <Footer />
         </Providers>
