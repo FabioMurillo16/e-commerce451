@@ -54,7 +54,7 @@ body {
   display: flex;
   flex-flow: column;
 }
-
+/*main is important to get a good layout and adapt my items https://es.stackoverflow.com/questions/41736/qu%C3%A9-le-estoy-indicando-a-flexbox-con-esta-opci%C3%B3n-flex-1-0-auto*/
 .main {
   flex: 1 1 auto;
 }
