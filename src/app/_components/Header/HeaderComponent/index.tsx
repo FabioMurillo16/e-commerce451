@@ -1,7 +1,20 @@
 import React from 'react'
+import { Header } from '../../../../payload/payload-types'
+import { Gutter } from '../../Gutter'
+import Link from 'next/link'
 
-export const HeaderComponent = () => {
-  return <div>Header Component</div>
+
+
+export const HeaderComponent = ({ header }:{ header: Header }) => {
+  return (
+    <nav>
+      <Gutter>
+        <Link href="/">
+        <img src="/logo-black.svg" alt="logo" />
+        </Link>
+      </Gutter>
+    </nav>
+  )
 }
 
 
