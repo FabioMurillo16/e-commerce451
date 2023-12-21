@@ -11,7 +11,7 @@ export const HeaderComponent = ({ header }:{ header: Header }) => {
     <nav className={[classes.header]}>
       <Gutter className={classes.wrap}>
         <Link href="/">
-        <img src="/logo-black.svg" alt="logo" width={170} height={50} />
+        <Image src="/logo-black.svg" alt="logo" width={170} height={50} />
         </Link>
       </Gutter>
     </nav>
