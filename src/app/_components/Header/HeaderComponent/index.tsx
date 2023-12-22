@@ -15,6 +15,8 @@ export const HeaderComponent = ({ header }:{ header: Header }) => {
   const pathname = usePathname()
 
   return (
+    /*In the nav im adding my classes header and hide, and constants 
+    that won't show in the Header and footer of the web.*/
     <nav className={[classes.header, noHeaderFooterUrls.includes
     (pathname) && classes.hide]}>
       <Gutter className={classes.wrap}>
