@@ -6,7 +6,7 @@ import { inclusions, noHeaderFooterUrls } from "../../../constants";
 import { usePathname } from "next/navigation";
 import { Gutter } from "../../Gutter";
 
-import clases from '.index.module.scss'
+import clases from './index.module.scss'
 
 const FooterComponent = () => {
 
