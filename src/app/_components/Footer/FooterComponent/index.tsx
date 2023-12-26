@@ -9,8 +9,9 @@ import { Gutter } from "../../Gutter";
 import clases from './index.module.scss'
 import Image from 'next/image';
 import Link from 'next/link';
+import { Footer } from '../../../../payload/payload-types';
 
-const FooterComponent = () => {
+const FooterComponent = ({footer}: {footer: Footer}) => {
 
   const pathname = usePathname()
 
@@ -47,6 +48,8 @@ const FooterComponent = () => {
               <Image src="/logo-white.svg" alt='logo' width={170} 
               height={70} />
             </Link>
+
+            <p>{footer.copyright}</p>
           </div>
         </Gutter>
 
