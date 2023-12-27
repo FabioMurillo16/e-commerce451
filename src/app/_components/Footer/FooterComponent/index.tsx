@@ -10,10 +10,13 @@ import clases from './index.module.scss'
 import Image from 'next/image';
 import Link from 'next/link';
 import { Footer } from '../../../../payload/payload-types';
+import { Button } from '../../Button';
 
 const FooterComponent = ({footer}: {footer: Footer}) => {
 
   const pathname = usePathname()
+
+  const navItems = footer?.navItems || []
 
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? 
@@ -50,6 +53,25 @@ const FooterComponent = ({footer}: {footer: Footer}) => {
             </Link>
 
             <p>{footer.copyright}</p>
+
+            <div className={clases.socialLinks}>
+              {navItems.map(item => {
+                const icon = ''
+
+                return(
+                  <Button
+                    key={item.link.label}
+                    el="link"
+                    href={item.link.url}
+                    newTab={true}
+                    className={clases.socialLinks}
+                  >
+                    {item.link.label}
+                  </Button>
+                )
+              })}
+            </div>
+            
           </div>
         </Gutter>
 
