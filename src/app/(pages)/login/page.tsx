@@ -8,6 +8,8 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function Login() {
   await getMeUser({
@@ -15,11 +17,30 @@ export default async function Login() {
   })
 
   return (
-    <Gutter className={classes.login}>
-      <RenderParams className={classes.params} />
-      <h1>Log in</h1>
-      <LoginForm />
-    </Gutter>
+    <section className={classes.login}>
+      <div className={classes.heroImg}>
+        <Link href="/">
+          <Image 
+            src="/logo-black.svg"
+            alt="logo"
+            width={250}
+            height={23}
+            className={classes.logo}
+          />
+        </Link>
+
+        <div className={classes.formWrapper}>
+          <div className={classes.formContainer}>
+            <RenderParams className={classes.params} />
+
+            <div className={classes.formTitle}>
+              <h3>Welcome</h3>
+              <Image src="/assets/icons/hand.png" alt="hand" height={30} width={30}/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -27,7 +48,7 @@ export const metadata: Metadata = {
   title: 'Login',
   description: 'Login or create an account to get started.',
   openGraph: mergeOpenGraph({
-    title: 'Login',
+    title: 'Login', 
     url: '/login',
   }),
 }
