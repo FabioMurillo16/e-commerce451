@@ -28,18 +28,24 @@ export default async function Login() {
             className={classes.logo}
           />
         </Link>
+      </div>
 
-        <div className={classes.formWrapper}>
+      <div className={classes.formWrapper}>
           <div className={classes.formContainer}>
             <RenderParams className={classes.params} />
 
             <div className={classes.formTitle}>
               <h3>Welcome</h3>
-              <Image src="/assets/icons/hand.png" alt="hand" height={30} width={30}/>
+              <Image src="/assets/icons/hand.png" alt="hand" width={30} 
+              height={30}/>
             </div>
+
+            <p>Please login here</p>
+
+            <LoginForm />
           </div>
-        </div>
-      </div>
+        </div> 
+        
     </section>
   )
 }
